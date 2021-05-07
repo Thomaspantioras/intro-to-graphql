@@ -80,3 +80,27 @@ The other types don't have any test, go ahead and write some!
   - create a type eg type Friend
   - then have to be able to query this type, so created the type Query with a field that allows to query for Friend, and will return sth in the shape of Friend
   - with `schema` GraphQl knows that the query type is gonna be the type called `Query`. This can be called whatever we want as long as it changed in both places.
+- we have to create a resolver that resolves that type, which is like a controller
+ - inside the `ApolloServer` instance to `resolvers`, I need to resolve 
+ ```
+ Query: {
+   myFriend() {
+    return {name: "Ana"}
+    }
+  }
+ ```
+ - Then it's executed the dev command with the `connect(...)` method where is connecting to the database and is listening on the server with a passed in port it is logging.
+
+ - Install first your dependencies with `npm i` or `yarn` and then run `yarn dev`
+  - some issues to run solved with 
+  ```
+  update all those packages with:
+    $ npm install -g npm-check-updates
+    $ npm-check-updates -u
+    $ npm install
+  ```
+  and added to db.js 
+  ```
+      { ...opts, useNewUrlParser: true, useUnifiedTopology: true }
+  ```
+  to server.js ``` await connect(config.dbUrl).catch(() => {}); ``` for unhandled errors
