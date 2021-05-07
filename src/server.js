@@ -11,6 +11,9 @@ const types = ['product', 'coupon', 'user']
 
 export const start = async () => {
   const rootSchema = `
+    type Friends {
+      name: String
+    }
     schema {
       query: Query
     }

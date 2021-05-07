@@ -71,3 +71,12 @@ There are many many ways to authenticate with GraphQL. Our API is a public API, 
 
 ### Testing
 The other types don't have any test, go ahead and write some!
+
+### My notes - lesson 1
+## server.js
+- Apollo service creates a GraphQl server
+- `start()` function starts the server
+  - inside we have the root schema which ids the first part of your schema, the intro point
+  - create a type eg type Friend
+  - then have to be able to query this type, so created the type Query with a field that allows to query for Friend, and will return sth in the shape of Friend
+  - with `schema` GraphQl knows that the query type is gonna be the type called `Query`. This can be called whatever we want as long as it changed in both places.
