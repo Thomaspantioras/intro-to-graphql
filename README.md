@@ -72,8 +72,8 @@ There are many many ways to authenticate with GraphQL. Our API is a public API, 
 ### Testing
 The other types don't have any test, go ahead and write some!
 
-### My notes - lesson 1
-## server.js
+## My notes - lesson 1
+### server.js
 - Apollo service creates a GraphQl server
 - `start()` function starts the server
   - inside we have the root schema which ids the first part of your schema, the intro point
