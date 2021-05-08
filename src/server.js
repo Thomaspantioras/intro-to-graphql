@@ -14,9 +14,15 @@ export const start = async () => {
     type Friend {
       name: String
       surname: String
+      bestFriend: Friend
     }
 
     type Dog {
+      name: String
+      age: Int!
+    }
+
+    input DogInput {
       name: String
       age: Int!
     }
@@ -25,6 +31,11 @@ export const start = async () => {
       myFriend: Friend
       myDog: Dog
       hello: String
+      dogs: [Dog]
+    }
+
+    type Mutation {
+      newDog(input: DogInput!): Dog!
     }
     schema {
       query: Query
@@ -39,7 +50,14 @@ export const start = async () => {
         myFriend() {
           return {
             name: "Anastasia",
-            surname: "Frozen"
+            surname: "Frozen",
+            bestFriend: {
+              name: "Fatema",
+            surname: "Iraskiv",
+            bestFriend: {
+              name: "Anastasia"
+            }
+            }
           }
         },
         myDog() {
