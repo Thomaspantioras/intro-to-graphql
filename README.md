@@ -91,7 +91,7 @@ The other types don't have any test, go ahead and write some!
  ```
  - Then it's executed the dev command with the `connect(...)` method where is connecting to the database and is listening on the server with a passed in port it is logging.
 
- - Install first your dependencies with `npm i` or `yarn` and then run `yarn dev`
+- Install first your dependencies with `npm i` or `yarn` and then run `yarn dev`
   - some issues to run solved with 
   ```
   update all those packages with:
@@ -104,3 +104,14 @@ The other types don't have any test, go ahead and write some!
       { ...opts, useNewUrlParser: true, useUnifiedTopology: true }
   ```
   to server.js ``` await connect(config.dbUrl).catch(() => {}); ``` for unhandled errors
+
+- open http://localhost:3000/ and GraphQL Playground starts. Query like: 
+```
+{
+  myFriend {
+    name
+  }
+}
+```
+It gets that from the resolver.
+> The schema defines the structure of valid queries for the client side and schema resolvers are the functions which names match the schema that actually do the work of querying the database

@@ -13,9 +13,18 @@ export const start = async () => {
   const rootSchema = `
     type Friend {
       name: String
+      surname: String
     }
+
+    type Dog {
+      name: String
+      age: Int!
+    }
+
     type Query {
       myFriend: Friend
+      myDog: Dog
+      hello: String
     }
     schema {
       query: Query
@@ -28,7 +37,19 @@ export const start = async () => {
     resolvers: {
       Query: {
         myFriend() {
-          return {name: "Anastasia"}
+          return {
+            name: "Anastasia",
+            surname: "Frozen"
+          }
+        },
+        myDog() {
+          return {
+            name: "Mat",
+            age: 3
+          }
+        },
+        hello() {
+          return "Fuck off!!"
         }
       }},
     context({ req }) {
